@@ -1,5 +1,4 @@
-""" DABW Lesson 2
-"""
+# DABW Lesson 2
 import streamlit
 
 streamlit.title('My Parents New Healhty Diner')
@@ -12,8 +11,7 @@ streamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-""" DABW Lesson 3
-"""
+# DABW Lesson 3
 import pandas 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 streamlit.dataframe(my_fruit_list)
