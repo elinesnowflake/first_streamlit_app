@@ -46,7 +46,7 @@ except:
   streamlit.error()
 
 """Snowflake"""
-streamlit.text("The fruit load list contains:")
+streamlit.text("View Our Fruits List - Add Your Favorites!")
 
 #  Snowflake-related functions
 def get_fruit_load_list():
@@ -58,6 +58,7 @@ def get_fruit_load_list():
 if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
+  my_cnx.close()
   streamlit.dataframe(my_data_rows)
 
 # Allow the end user to add a fruit to the list
@@ -71,5 +72,7 @@ if streamlit.button("Add a Fruit to the List"):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
   streamlit.text(back_from_function)
+  
+
 
 
